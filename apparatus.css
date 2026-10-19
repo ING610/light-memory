@@ -1,0 +1,8 @@
+.apparatus-angle{margin-top:16px;border:1px solid #d8dfd6;border-radius:13px;background:#fffdf8;overflow:hidden}
+.apparatus-angle summary{list-style:none;display:flex;align-items:center;justify-content:space-between;padding:15px 19px;color:#356f68;font-size:14px;font-weight:800;cursor:pointer}
+.apparatus-angle summary::-webkit-details-marker{display:none}
+.apparatus-angle summary span{font-size:23px;line-height:1;font-weight:400;transition:transform .2s}
+.apparatus-angle[open] summary span{transform:rotate(45deg)}
+.apparatus-angle>div{padding:0 19px 18px}
+.apparatus-angle img{display:block;width:100%;height:auto;border-radius:8px}
+.apparatus-angle p{margin:10px 0 0;color:#64766f;font-size:13px}
