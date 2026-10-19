@@ -99,14 +99,41 @@
         </div>
         <div class="journey-display">
           <div class="display-top"><span>GABOR IN-LINE HOLOGRAPHY</span><span id="display-counter">01 / 03</span></div>
-          <div class="light-lab" id="light-lab" data-stage="0" role="img" aria-label="同轴全息光路示意，当前展示点亮光源">
-          <div class="lab-grid"></div><div class="lab-axis"></div><div class="lab-beam"></div><div class="lab-source"><i></i></div><div class="lab-object"><span>样品</span></div><div class="lab-reference" aria-hidden="true"></div><div class="lab-wave lab-wave-one"></div><div class="lab-wave lab-wave-two"></div><div class="lab-screen"><div class="lab-rings"></div></div>
-            <div class="lab-tags"><span>光源</span><span>样品</span><span>记录面</span></div>
+          <div class="light-lab" id="light-lab" data-stage="0" role="img" aria-label="同轴全息光路示意，当前展示点亮光源" aria-describedby="gabor-field-note">
+            <svg class="gabor-diagram" viewBox="0 0 700 310" aria-hidden="true" focusable="false">
+              <defs>
+                <pattern id="gabor-grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#dbe6da" stroke-width="1"/></pattern>
+                <linearGradient id="gabor-illumination"><stop stop-color="#ec966f" stop-opacity=".3"/><stop offset="1" stop-color="#edb08b" stop-opacity=".12"/></linearGradient>
+                <clipPath id="gabor-forward"><rect x="365" y="55" width="250" height="190"/></clipPath>
+                <pattern id="gabor-record-pattern" width="30" height="22" patternUnits="userSpaceOnUse"><path d="M0 4Q14 11 30 3M0 13Q12 20 30 12" stroke="#b95642" stroke-width="2" fill="none"/></pattern>
+              </defs>
+              <rect width="700" height="310" fill="url(#gabor-grid)"/>
+              <path d="M30 150H655" stroke="#9eb7a9" stroke-width="1.5" stroke-dasharray="5 7"/>
+              <rect x="35" y="121" width="71" height="58" rx="8" fill="#d86c54"/>
+              <rect x="48" y="134" width="39" height="31" rx="4" fill="none" stroke="#efab8c"/>
+              <path d="M106 150H134" stroke="#e88b67" stroke-width="8"/>
+              <rect x="134" y="88" width="72" height="124" rx="9" fill="#fffdf8" stroke="#80a99a" stroke-width="2"/>
+              <ellipse cx="155" cy="150" rx="7" ry="27" fill="#d7e7de" stroke="#80a99a" stroke-width="2"/>
+              <ellipse cx="185" cy="150" rx="8" ry="51" fill="#d7e7de" stroke="#80a99a" stroke-width="2"/>
+              <text x="170" y="63" text-anchor="middle">扩束准直</text>
+              <g class="gabor-incident"><rect x="206" y="94" width="159" height="112" fill="url(#gabor-illumination)"/><path d="M206 94H365M206 206H365" stroke="#e68b64" stroke-width="2"/></g>
+              <g class="gabor-fields">
+                <rect x="365" y="94" width="250" height="112" fill="#75a58d" opacity=".08"/>
+                <g stroke="#356f68" stroke-width="3" stroke-dasharray="8 6" fill="none"><path d="M206 110H615M206 127H615M206 173H615M206 190H615"/></g>
+                <g clip-path="url(#gabor-forward)" fill="none" stroke="#c96249" stroke-width="2.5"><path d="M365 105A45 45 0 0 1 365 195M365 60A90 90 0 0 1 365 240M365 0A150 150 0 0 1 365 300M365 -65A215 215 0 0 1 365 365M365 -100A250 250 0 0 1 365 400"/><path d="M365 150L615 83M365 150L615 217" stroke-opacity=".45" stroke-width="1.5"/></g>
+              </g>
+              <rect x="347" y="105" width="33" height="90" rx="3" fill="#fffdf8" fill-opacity=".22" stroke="#9db7ab" stroke-width="1.5"/>
+              <path d="M361 137L365 132L369 137V166H361Z" fill="#354e46"/>
+              <path d="M362 166L350 229" stroke="#688578" stroke-width="1.2"/>
+              <text x="349" y="250" text-anchor="middle">小针段</text>
+              <g class="gabor-record"><rect x="609" y="73" width="27" height="154" rx="4" fill="#41796d"/><rect x="615" y="80" width="15" height="140" rx="2" fill="#cce1d2"/><rect class="gabor-record-fringes" x="615" y="80" width="15" height="140" rx="2" fill="url(#gabor-record-pattern)"/></g>
+              <g class="gabor-labels"><text x="71" y="280" text-anchor="middle">光源</text><text x="279" y="83" text-anchor="middle">宽光束</text><text x="622" y="280" text-anchor="middle">记录面</text></g>
+            </svg>
           </div>
           <div class="field-legend" aria-label="光场分量图例"><span><i class="reference-key" aria-hidden="true"></i>参考光：直透分量</span><span><i class="object-key" aria-hidden="true"></i>物光：样品散射或衍射分量</span></div>
-          <p class="field-note">颜色与线型只帮助辨认光场分量；两者沿同轴方向到达记录面并重叠，不是两条独立光路。</p>
+          <p class="field-note" id="gabor-field-note">针段投影只占照明光束截面的一小部分，未被明显调制的直透光作为参考光；物光与它同轴重叠。波前、条纹及尺寸均为定性示意，针段并非自行发光。</p>
           <div class="stage-panels">
-            <article id="panel-0" class="stage-panel is-active" role="tabpanel" aria-labelledby="tab-0"><div class="stage-kicker">第一站 · 点亮</div><h3>稳定的光，让相遇有迹可循。</h3><p>实验从相干照明开始。传播到样品后，一部分光继续前行，另一部分受到样品影响而发生散射。两部分光将在记录面相遇。</p><p class="stage-takeaway"><b>记住这一点</b> 这里的“参考光”是未被样品明显扰动、继续传播的光。</p></article>
+            <article id="panel-0" class="stage-panel is-active" role="tabpanel" aria-labelledby="tab-0"><div class="stage-kicker">第一站 · 点亮</div><h3>稳定的光，让相遇有迹可循。</h3><p>扩束准直后的相干光覆盖样品，针段投影只占光束截面的一小部分。未被明显调制的部分继续直透，受针段影响的部分形成物光，两者将在记录面相遇。</p><p class="stage-takeaway"><b>记住这一点</b> 这里的“参考光”是未被样品明显扰动、继续传播的光。</p></article>
             <article id="panel-1" class="stage-panel" role="tabpanel" aria-labelledby="tab-1" hidden><div class="stage-kicker">第二站 · 遇见</div><h3>样品改变了光，也把自身的信息交给光。</h3><p>样品使部分入射光散射或衍射，形成物光；未被样品明显调制的直透分量作为参考光。两者在样品下游同轴传播，并在记录面重叠。</p><p class="stage-takeaway"><b>记住这一点</b> 记录面接收的是两种光场叠加后的强度分布，不是直接读取相位。</p></article>
             <article id="panel-2" class="stage-panel" role="tabpanel" aria-labelledby="tab-2" hidden><div class="stage-kicker">第三站 · 留下</div><h3>两束光相遇，明暗成为可保存的线索。</h3><p>物光和参考光叠加形成干涉。探测器记录的是光强，不会直接把光波的相位写成数值；干涉条纹让相位差的信息间接进入记录。</p><p class="stage-takeaway"><b>下一步</b> <a href="#observe">到干涉互动中分别观察光场分量 ↗</a></p></article>
           </div>
@@ -156,8 +183,8 @@
       <div class="evidence-board" id="real-images" aria-label="绣花针横向移动案例的两幅实验采集图像">
         <div class="evidence-head"><span>从实验过程回到采集记录</span><strong>同一针影，在两幅图像中换了位置。</strong></div>
         <div class="evidence-pair">
-          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-a.jpg" alt="位移前的实验采集图像，暗色绣花针针影位于画面偏左处" loading="lazy"><span class="evidence-marker" style="--mark-x:44%" aria-hidden="true"></span></div><figcaption><b>图像 A · 位移前</b><span>沿针影右侧边缘定位</span></figcaption></figure>
-          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-b.jpg" alt="位移后的实验采集图像，暗色绣花针针影位于画面偏右处" loading="lazy"><span class="evidence-marker" style="--mark-x:79%" aria-hidden="true"></span></div><figcaption><b>图像 B · 位移后</b><span>用同一方法再次定位</span></figcaption></figure>
+          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-a.jpg" alt="位移前的实验采集图像，暗色绣花针针影位于画面偏左处" loading="lazy"><span class="evidence-marker" style="--mark-x:42%" aria-hidden="true"></span></div><figcaption><b>图像 A · 位移前</b><span>沿针影右侧边缘观察</span></figcaption></figure>
+          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-b.jpg" alt="位移后的实验采集图像，暗色绣花针针影位于画面偏右处" loading="lazy"><span class="evidence-marker" style="--mark-x:74%" aria-hidden="true"></span></div><figcaption><b>图像 B · 位移后</b><span>对照同侧明暗过渡区域</span></figcaption></figure>
         </div>
         <p class="evidence-note">红色标记仅帮助寻找相同侧的针影边缘；页面不把截图位置当作测量值。定量计算应回到原始图像像素坐标。</p>
       </div>
