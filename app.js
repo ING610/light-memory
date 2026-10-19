@@ -10,7 +10,7 @@
   let stage = 0;
 
   function selectStage(index, focus = false) {
-    stage = Math.max(0, Math.min(3, index));
+    stage = Math.max(0, Math.min(tabs.length - 1, index));
     tabs.forEach((tab, i) => {
       const active = i === stage;
       tab.classList.toggle("is-active", active);
@@ -21,19 +21,18 @@
     });
     lab.dataset.stage = String(stage);
     lab.setAttribute("aria-label", `同轴全息光路示意，当前展示第${stage + 1}站`);
-    journeyDisplay.classList.toggle("is-reading", stage === 3);
-    document.getElementById("display-counter").textContent = `0${stage + 1} / 04`;
+    document.getElementById("display-counter").textContent = `${String(stage + 1).padStart(2, "0")} / ${String(tabs.length).padStart(2, "0")}`;
     previous.disabled = stage === 0;
-    next.disabled = stage === 3;
+    next.disabled = stage === tabs.length - 1;
     if (focus) tabs[stage].focus();
   }
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => selectStage(index));
     tab.addEventListener("keydown", (event) => {
       const delta = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : event.key === "ArrowLeft" || event.key === "ArrowUp" ? -1 : 0;
-      if (delta) { event.preventDefault(); selectStage((stage + delta + 4) % 4, true); }
+      if (delta) { event.preventDefault(); selectStage((stage + delta + tabs.length) % tabs.length, true); }
       if (event.key === "Home") { event.preventDefault(); selectStage(0, true); }
-      if (event.key === "End") { event.preventDefault(); selectStage(3, true); }
+      if (event.key === "End") { event.preventDefault(); selectStage(tabs.length - 1, true); }
     });
   });
   previous.addEventListener("click", () => selectStage(stage - 1));
@@ -50,8 +49,9 @@
     heroIgnite.setAttribute("aria-expanded", "true");
     heroAfterlight.hidden = false;
   });
-  document.getElementById("journey-start").addEventListener("click", () => selectStage(0, true));
-  document.getElementById("hero-afterlight-link").addEventListener("click", () => selectStage(0, true));
+  document.getElementById("journey-start").addEventListener("click", () => selectStage(0));
+  document.getElementById("hero-afterlight-link").addEventListener("click", () => selectStage(0));
+  document.getElementById("phenomenon-continue").addEventListener("click", () => selectStage(0));
 
   function connectStageReturn(id, index) {
     document.getElementById(id).addEventListener("click", () => {
@@ -62,7 +62,13 @@
       });
     });
   }
-  connectStageReturn("view-real-images", 3);
+  document.getElementById("view-real-images").addEventListener("click", () => {
+    requestAnimationFrame(() => {
+      const title = document.getElementById("discussion-title");
+      title.scrollIntoView({ block: "start" });
+      title.focus({ preventScroll: true });
+    });
+  });
   connectStageReturn("knowledge-return-record", 2);
   connectStageReturn("knowledge-return-reference", 1);
 
@@ -121,7 +127,7 @@
     { question: "在 Gabor 同轴全息中，参考光与物光主要来自哪里？", options: ["两台互不相关的激光器", "同一束入射光经过样品后的两部分光场", "相机内部生成的两束光", "激光与环境光"], answer: 1, explanation: "未被样品明显扰动的部分可作为参考光；被样品散射或衍射的部分携带样品信息，成为物光。", topic: "参考光与物光", revisit: "#journey", reviewLabel: "回到第二站 · 遇见 ↗", stageIndex: 1 },
     { question: "记录面上的明暗条纹主要由什么产生？", options: ["物光与参考光叠加后的干涉", "相机自动绘制的样品轮廓", "样品自行发光", "透镜的颜色"], answer: 0, explanation: "两部分相干光叠加，强度随相位差变化，于是出现明暗条纹。可返回互动实验，在模型中分别观察两部分光场。", topic: "干涉记录", revisit: "#observe", reviewLabel: "回到干涉互动 ↗" },
     { question: "普通 CCD/CMOS 探测器直接记录的是哪一种量？", options: ["完整的光波相位", "样品真实三维形貌", "到达记录面的光强分布", "两透镜的焦距"], answer: 2, explanation: "探测器直接记录光强。物光与参考光的干涉让相位差影响光强，因此相关线索被间接编码。", topic: "探测器与相位", revisit: "#knowledge", reviewLabel: "查看知识展签 01 ↗", knowledgeIndex: 0 },
-    { question: "前后两张实验图像中同一特征移动了 Δp 个像素，进行尺度换算还需要知道什么？", options: ["相机像元尺寸与系统相关倍率", "样品颜色与网页宽度", "激光器的品牌", "题目总分"], answer: 0, explanation: "图像分析练习采用 Δx = Δp · k / M；k 是像元尺寸，M 是系统相关倍率。倍率需要依据具体系统确定。", topic: "图像分析", revisit: "#journey", reviewLabel: "回到第四站 · 读图 ↗", stageIndex: 3 }
+    { question: "前后两张实验图像中同一特征移动了 Δp 个像素，进行尺度换算还需要知道什么？", options: ["相机像元尺寸与系统相关倍率", "样品颜色与网页宽度", "激光器的品牌", "题目总分"], answer: 0, explanation: "图像分析练习采用 Δx = Δp · k / M；k 是像元尺寸，M 是系统相关倍率。倍率需要依据具体系统确定。", topic: "图像分析", revisit: "#discussion", reviewLabel: "回到读图讨论 ↗" }
   ];
 
   const challenge = document.getElementById("challenge");
@@ -197,7 +203,7 @@
     if (/背景图像/.test(text)) return { topic: "背景图像与参考光", revisit: "#knowledge", reviewLabel: "查看知识展签 03 ↗", knowledgeIndex: 2 };
     if (/针段红色轮廓|传播波纹/.test(text)) return { topic: "样品如何改变光", revisit: "#journey", reviewLabel: "回到第二站 · 遇见 ↗", stageIndex: 1 };
     if (/记录图像过暗|环境光|透镜表面|扩束准直|光阑|偏振片|激光光源|氦氖|632\.8|焦距|透镜间距|相干长度/.test(text)) return { topic: "光源与器件", revisit: "#lesson", reviewLabel: "回看完整微课 ↗" };
-    if (/图像分析|像元|像素|Δx|Δp|倍率|平移台|回程|尺度/.test(text)) return { topic: "图像分析", revisit: "#journey", reviewLabel: "回到第四站 · 读图 ↗", stageIndex: 3 };
+    if (/图像分析|像元|像素|Δx|Δp|倍率|平移台|回程|尺度/.test(text)) return { topic: "图像分析", revisit: "#discussion", reviewLabel: "回到读图讨论 ↗" };
     if (/传统光学全息与数字全息/.test(text)) return { topic: "数字记录", revisit: "#lesson", reviewLabel: "回看完整微课 ↗" };
     if (/CCD|CMOS|探测器|记录面的光强/.test(text)) return { topic: "探测器与相位", revisit: "#knowledge", reviewLabel: "查看知识展签 01 ↗", knowledgeIndex: 0 };
     if (/参考光|物光|直透|独立参考光路/.test(text)) return { topic: "参考光与物光", revisit: "#journey", reviewLabel: "回到第二站 · 遇见 ↗", stageIndex: 1 };
@@ -210,6 +216,7 @@
     link.addEventListener("click", () => {
       let preciseTarget;
       let focusTarget;
+      let scrollBlock = "center";
       if (Number.isInteger(target.stageIndex)) {
         selectStage(target.stageIndex);
         preciseTarget = panels[target.stageIndex];
@@ -225,14 +232,24 @@
         seekLesson(target.lessonTime);
         preciseTarget = lessonPlayer;
         focusTarget = lessonVideo;
+      } else if (target.revisit === "#discussion") {
+        preciseTarget = document.getElementById("discussion-title");
+        focusTarget = preciseTarget;
+        scrollBlock = "start";
       }
       if (preciseTarget) requestAnimationFrame(() => {
-        preciseTarget.scrollIntoView({ block: "center" });
+        preciseTarget.scrollIntoView({ block: scrollBlock });
         focusTarget.focus({ preventScroll: true });
       });
     });
     return link;
   }
+  document.querySelectorAll(".discussion-video-return[data-lesson-time]").forEach(link => {
+    const replacement = createReviewLink({ revisit: "#lesson", lessonTime: Number(link.dataset.lessonTime) }, link.textContent);
+    replacement.className = link.className;
+    replacement.dataset.lessonTime = link.dataset.lessonTime;
+    link.replaceWith(replacement);
+  });
   function sourceClock(seconds) {
     const time = Math.floor(seconds);
     return `${String(Math.floor(time / 60)).padStart(2, "0")}:${String(time % 60).padStart(2, "0")}`;

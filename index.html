@@ -20,6 +20,7 @@
       <a href="#journey">跟随光</a>
       <a href="#observe">动手观察</a>
       <a href="#lesson">看微课</a>
+      <a href="#discussion">读图讨论</a>
       <a href="#knowledge">知识展签</a>
       <a href="#challenge">检验理解</a>
     </nav>
@@ -31,13 +32,13 @@
       <div class="hero-grain" aria-hidden="true"></div>
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span> 一场可以亲手参与的光学探索</p>
-        <h1 id="hero-title">光的<span>记忆</span><sup>01 / 04</sup></h1>
+        <h1 id="hero-title">光的<span>记忆</span><sup>01 / 03</sup></h1>
         <p class="hero-question">一束光，如何记录世界？</p>
-        <p class="hero-intro">沿着光的路径，从照亮样品，到留下干涉条纹，再到理解图像中的线索。四个观察，走近 Gabor 同轴全息。</p>
+        <p class="hero-intro">先沿光路理解干涉记录，再通过微课与读图讨论，把原理放回实际实验。走近 Gabor 同轴全息，看看光如何留下信息。</p>
         <div class="hero-actions">
-          <a class="button button-primary" id="journey-start" href="#journey">跟随光的轨迹 <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" id="journey-start" href="#phenomenon">跟随光的轨迹 <span aria-hidden="true">↗</span></a>
         </div>
-        <p class="hero-guidance">先点亮图中的光源，再跟随它逐站探索。</p>
+        <p class="hero-guidance">先点亮图中的光源，再从一张实验记录提出问题。</p>
       </div>
       <div class="hero-art" id="hero-art">
         <div class="art-label art-label-top">让不可见的信息<br>变得可以观察</div>
@@ -73,48 +74,45 @@
           <text x="605" y="112" fill="#405d58" font-size="18" font-family="sans-serif">03 记录面</text>
         </svg>
         <button class="hero-ignite" id="hero-ignite" type="button" aria-controls="hero-afterlight" aria-expanded="false" aria-label="点亮图中的光源">点亮光源 <span aria-hidden="true">✦</span></button>
-        <div class="hero-afterlight" id="hero-afterlight" aria-live="polite" hidden><span>光路已点亮。</span><a id="hero-afterlight-link" href="#journey">跟随这束光，进入第一站 ↗</a></div>
+        <div class="hero-afterlight" id="hero-afterlight" aria-live="polite" hidden><span>光路已点亮。</span><a id="hero-afterlight-link" href="#phenomenon">先看看，这束光留下了什么 ↗</a></div>
         <div class="art-note"><span class="art-note-dot"></span> 教学光路示意 · 同轴排列</div>
       </div>
-      <div class="hero-bottom"><span>从一个问题出发</span><span class="hero-scroll">向下探索 <span aria-hidden="true">↓</span></span><span>01 — 04</span></div>
+      <div class="hero-bottom"><span>从一个问题出发</span><span class="hero-scroll">向下探索 <span aria-hidden="true">↓</span></span><span>01 — 03</span></div>
     </section>
 
-    <section class="invitation section-wrap" aria-labelledby="invitation-title">
-      <p class="section-index">一张看不懂的照片？</p>
+    <section id="phenomenon" class="invitation section-wrap" aria-labelledby="invitation-title">
+      <p class="section-index">从一个实验问题出发</p>
       <div class="invitation-grid">
-        <h2 id="invitation-title">如果记录面上只有<br><em>明暗条纹</em>，物体去哪了？</h2>
-        <div><p>普通照片直接呈现亮度与轮廓。全息记录留下的，却是物光与参考光叠加后的强度分布。条纹里藏着恢复波前所需的线索。</p><a href="#journey" class="underlined-link">沿光路找答案 <span aria-hidden="true">↗</span></a></div>
+        <h2 id="invitation-title" tabindex="-1">一根细针，<br><em>会留下怎样的记录？</em></h2>
+        <div><p>先观察针段样品和配套实验的采集记录，再沿光路认识物光、参考光与干涉。看完微课后，再比较移动前后的实验图像，讨论怎样分析变化。</p><a id="phenomenon-continue" href="#journey" class="underlined-link">沿光路找答案 <span aria-hidden="true">↗</span></a></div>
       </div>
+      <div class="phenomenon-pair">
+        <figure><img src="sample-from-lesson.jpg" alt="原微课中的针段样品三维教学画面" loading="lazy"><figcaption><b>认识样品</b><span>原微课中的三维教学画面</span></figcaption></figure>
+        <figure><img src="experiment-a.jpg" alt="配套实验采集的初始状态记录，包含针影及明暗变化" loading="lazy"><figcaption><b>观察记录</b><span>配套实验的相机采集图像</span></figcaption></figure>
+      </div>
+      <p class="phenomenon-note">两类素材分别用于认识样品与观察记录；模型画面不是实物照片，采集图像也不是三维重建结果。</p>
     </section>
 
     <section id="journey" class="journey" aria-labelledby="journey-title">
-      <div class="section-wrap journey-head"><div><p class="section-index">展览路线 / 01—04</p><h2 id="journey-title">跟随一束光，<br>看见信息如何留下。</h2></div><p>点选任意一站。每一步只回答一个关键问题，最后再把它们连成完整的记录过程。</p></div>
+      <div class="section-wrap journey-head"><div><p class="section-index">原理探索 / 01—03</p><h2 id="journey-title">跟随一束光，<br>看见信息如何留下。</h2></div><p>先用三站认识光源、样品作用与干涉记录，再动手比较两种光场分量。实验图像的比较，留到完整微课之后讨论。</p></div>
       <div class="section-wrap journey-layout">
-        <div class="journey-steps" role="tablist" aria-label="光的四站探索">
+        <div class="journey-steps" role="tablist" aria-label="光的三站原理探索">
           <button class="journey-step is-active" id="tab-0" role="tab" aria-selected="true" aria-controls="panel-0" data-step="0"><span class="step-number">01</span><span class="step-word"><strong>点亮</strong><small>光从哪里来？</small></span><span aria-hidden="true">↗</span></button>
           <button class="journey-step" id="tab-1" role="tab" aria-selected="false" aria-controls="panel-1" data-step="1" tabindex="-1"><span class="step-number">02</span><span class="step-word"><strong>遇见</strong><small>光如何携带信息？</small></span><span aria-hidden="true">↗</span></button>
           <button class="journey-step" id="tab-2" role="tab" aria-selected="false" aria-controls="panel-2" data-step="2" tabindex="-1"><span class="step-number">03</span><span class="step-word"><strong>留下</strong><small>信息如何被记录？</small></span><span aria-hidden="true">↗</span></button>
-          <button class="journey-step" id="tab-3" role="tab" aria-selected="false" aria-controls="panel-3" data-step="3" tabindex="-1"><span class="step-number">04</span><span class="step-word"><strong>读图</strong><small>怎样分析实验图像？</small></span><span aria-hidden="true">↗</span></button>
         </div>
         <div class="journey-display">
-          <div class="display-top"><span>GABOR IN-LINE HOLOGRAPHY</span><span id="display-counter">01 / 04</span></div>
+          <div class="display-top"><span>GABOR IN-LINE HOLOGRAPHY</span><span id="display-counter">01 / 03</span></div>
           <div class="light-lab" id="light-lab" data-stage="0" role="img" aria-label="同轴全息光路示意，当前展示点亮光源">
-          <div class="lab-grid"></div><div class="lab-axis"></div><div class="lab-beam"></div><div class="lab-source"><i></i></div><div class="lab-object"><span>样品</span></div><div class="lab-wave lab-wave-one"></div><div class="lab-wave lab-wave-two"></div><div class="lab-screen"><div class="lab-rings"></div></div><div class="lab-reconstruction"><span>比较图像</span></div>
+          <div class="lab-grid"></div><div class="lab-axis"></div><div class="lab-beam"></div><div class="lab-source"><i></i></div><div class="lab-object"><span>样品</span></div><div class="lab-reference" aria-hidden="true"></div><div class="lab-wave lab-wave-one"></div><div class="lab-wave lab-wave-two"></div><div class="lab-screen"><div class="lab-rings"></div></div>
             <div class="lab-tags"><span>光源</span><span>样品</span><span>记录面</span></div>
           </div>
-          <div class="evidence-board" id="real-images" aria-label="绣花针横向移动案例的两幅实验采集图像">
-            <div class="evidence-head"><span>从示意走向实验记录</span><strong>同一针影，在两幅图像中换了位置。</strong></div>
-            <div class="evidence-pair">
-              <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-a.jpg" alt="位移前的实验采集图像，暗色绣花针针影位于画面偏左处" loading="lazy"><span class="evidence-marker" style="--mark-x:44%" aria-hidden="true"></span></div><figcaption><b>图像 A · 位移前</b><span>沿针影右侧边缘定位</span></figcaption></figure>
-              <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-b.jpg" alt="位移后的实验采集图像，暗色绣花针针影位于画面偏右处" loading="lazy"><span class="evidence-marker" style="--mark-x:79%" aria-hidden="true"></span></div><figcaption><b>图像 B · 位移后</b><span>用同一方法再次定位</span></figcaption></figure>
-            </div>
-            <p class="evidence-note">红色标记仅帮助寻找相同侧的针影边缘；页面不把截图位置当作测量值。定量计算应回到原始图像像素坐标。</p>
-          </div>
+          <div class="field-legend" aria-label="光场分量图例"><span><i class="reference-key" aria-hidden="true"></i>参考光：直透分量</span><span><i class="object-key" aria-hidden="true"></i>物光：样品散射或衍射分量</span></div>
+          <p class="field-note">颜色与线型只帮助辨认光场分量；两者沿同轴方向到达记录面并重叠，不是两条独立光路。</p>
           <div class="stage-panels">
             <article id="panel-0" class="stage-panel is-active" role="tabpanel" aria-labelledby="tab-0"><div class="stage-kicker">第一站 · 点亮</div><h3>稳定的光，让相遇有迹可循。</h3><p>实验从相干照明开始。传播到样品后，一部分光继续前行，另一部分受到样品影响而发生散射。两部分光将在记录面相遇。</p><p class="stage-takeaway"><b>记住这一点</b> 这里的“参考光”是未被样品明显扰动、继续传播的光。</p></article>
-            <article id="panel-1" class="stage-panel" role="tabpanel" aria-labelledby="tab-1" hidden><div class="stage-kicker">第二站 · 遇见</div><h3>样品改变了光，也把自身的信息交给光。</h3><p>透过或绕过样品的光会发生变化。携带样品信息的散射光称为物光；它与未明显受扰的参考光沿近似同一方向传播。</p><p class="stage-takeaway"><b>试着想象</b> 记录面还没有“看见”样品轮廓，它接收的是两束光叠加后的结果。</p></article>
-            <article id="panel-2" class="stage-panel" role="tabpanel" aria-labelledby="tab-2" hidden><div class="stage-kicker">第三站 · 留下</div><h3>两束光相遇，明暗成为可保存的线索。</h3><p>物光和参考光叠加形成干涉。探测器记录的是光强，不会直接把光波的相位写成数值；干涉条纹让相位差的信息间接进入记录。</p><p class="stage-takeaway"><b>下一步</b> 在下方模型中分别隐藏一个光场分量，看看条纹会发生什么。</p></article>
-            <article id="panel-3" class="stage-panel" role="tabpanel" aria-labelledby="tab-3" hidden><div class="stage-kicker">第四站 · 读图</div><h3>同一针影，为什么出现在不同位置？</h3><p>上方是配套教学资源中的实验采集图像。先在两幅图中寻找针影同一侧边缘，再用原始图像坐标求像素位移 Δp。若已知像元尺寸 k 和经标定的系统横向放大率 M，才可由 Δx = Δp × k / M 换算物方位移。</p><p class="stage-takeaway"><b>接着看</b> <a href="#lesson">在原教学视频中查看绣花针横向移动案例 ↗</a>　图像比较与尺度换算用于练习；由全息图恢复波前是另一项数值重建任务。</p></article>
+            <article id="panel-1" class="stage-panel" role="tabpanel" aria-labelledby="tab-1" hidden><div class="stage-kicker">第二站 · 遇见</div><h3>样品改变了光，也把自身的信息交给光。</h3><p>样品使部分入射光散射或衍射，形成物光；未被样品明显调制的直透分量作为参考光。两者在样品下游同轴传播，并在记录面重叠。</p><p class="stage-takeaway"><b>记住这一点</b> 记录面接收的是两种光场叠加后的强度分布，不是直接读取相位。</p></article>
+            <article id="panel-2" class="stage-panel" role="tabpanel" aria-labelledby="tab-2" hidden><div class="stage-kicker">第三站 · 留下</div><h3>两束光相遇，明暗成为可保存的线索。</h3><p>物光和参考光叠加形成干涉。探测器记录的是光强，不会直接把光波的相位写成数值；干涉条纹让相位差的信息间接进入记录。</p><p class="stage-takeaway"><b>下一步</b> <a href="#observe">到干涉互动中分别观察光场分量 ↗</a></p></article>
           </div>
           <div class="display-controls"><button id="prev-step" class="small-button" type="button" disabled>← 上一站</button><button id="next-step" class="small-button small-button-filled" type="button">下一站 →</button></div>
         </div>
@@ -130,15 +128,15 @@
     <section id="observe" class="observe section-wrap" aria-labelledby="observe-title">
       <div class="observe-intro"><p class="section-index">互动实验 / 干涉从何而来</p><h2 id="observe-title">把两束光分开看，<br>条纹还在吗？</h2><p>在理想化单点散射模型中，分别观察参考光与物光的光场分量，再看它们叠加后的强度分布。移动相对位置，比较条纹疏密。</p></div>
       <div class="experiment">
-        <div class="experiment-visual"><div class="experiment-title"><span>记录面 / 强度分布</span><span id="pattern-status" aria-live="polite">两束光叠加</span></div><canvas id="fringe-canvas" width="300" height="300" aria-label="理想化单点散射模型生成的定性光强图，并非真实绣花针全息图"></canvas><div class="pattern-scale"><span>亮</span><span class="scale-bar"></span><span>暗</span></div><p class="pattern-disclaimer">理想化单点模型 · 定性示意。<a id="view-real-images" href="#journey">对照真实实验记录 ↗</a></p></div>
+        <div class="experiment-visual"><div class="experiment-title"><span>记录面 / 强度分布</span><span id="pattern-status" aria-live="polite">两束光叠加</span></div><canvas id="fringe-canvas" width="300" height="300" aria-label="理想化单点散射模型生成的定性光强图，并非真实绣花针全息图"></canvas><div class="pattern-scale"><span>亮</span><span class="scale-bar"></span><span>暗</span></div><p class="pattern-disclaimer">理想化单点模型 · 定性示意。<a id="view-real-images" href="#discussion">查看视频后的真实记录讨论 ↗</a></p></div>
         <div class="experiment-controls"><h3>试一试</h3><p>看似不起眼的条纹，来自两束相干光的叠加。</p><div class="toggle-row"><label for="reference-toggle"><span class="toggle-name">参考光分量</span><small>未明显受样品扰动</small></label><input id="reference-toggle" type="checkbox" checked></div><div class="toggle-row"><label for="object-toggle"><span class="toggle-name">物光分量</span><small>携带样品影响</small></label><input id="object-toggle" type="checkbox" checked></div><div class="range-group"><label for="distance">记录面的相对位置 <output id="distance-value" for="distance">居中</output></label><input id="distance" type="range" min="18" max="50" value="30"><div class="range-ends"><span>较近</span><span>较远</span></div></div><div class="experiment-feedback" id="experiment-feedback" aria-live="polite">两束光场叠加后，记录的光强中出现干涉条纹。</div><details class="model-boundary"><summary>这张教学图与真实实验如何对应？</summary><p>图样采用理想化单点散射波与平面参考波，用来理解干涉项。开关只是在模型中分别显示光场分量；相对位置只展示变化趋势，不对应实验装置的定量距离或绣花针样品的真实图样。</p></details></div>
       </div>
-      <p class="model-to-experiment">先用理想模型理解干涉条纹，再用真实采集图像观察针影变化，最后在完整微课中认识实际的 Gabor 同轴全息实验过程。</p>
+      <p class="model-to-experiment">先用理想模型理解干涉，再在完整微课中认识实际实验过程，最后回到真实图像讨论针影变化。<a class="underlined-link" href="#lesson">接着看完整微课 ↗</a></p>
     </section>
 
     <section id="lesson" class="lesson" aria-labelledby="lesson-title">
       <div class="section-wrap lesson-layout">
-        <div class="lesson-copy"><p class="section-index">完整微课 / 深入理解</p><h2 id="lesson-title">把刚才的发现，<br>放进完整实验里。</h2><p>观看原有三维可视化教学视频，沿着真实实验光路认识器件、样品作用、同轴干涉记录与配套图像分析。网页中的探索与练习围绕这支视频展开。</p><a class="underlined-link" href="#knowledge">看完后读知识展签 <span aria-hidden="true">↗</span></a></div>
+        <div class="lesson-copy"><p class="section-index">完整微课 / 深入理解</p><h2 id="lesson-title">把刚才的发现，<br>放进完整实验里。</h2><p>观看原有三维可视化教学视频，沿着真实实验光路认识器件、样品作用、同轴干涉记录与配套图像分析。留意样品怎样移动、相机怎样采集，以及前后图像怎样比较。</p><a class="underlined-link" href="#discussion">看完后，带着问题读图 <span aria-hidden="true">↗</span></a></div>
         <div class="lesson-media">
           <div class="lesson-player" id="lesson-player">
             <video id="lesson-video" preload="metadata" playsinline poster="apparatus-model.png" aria-label="全息技术三维可视化教学资源原教学视频" tabindex="0"><source src="media/lesson-00.mp4" type="video/mp4">你的浏览器不支持视频播放。</video>
@@ -155,6 +153,24 @@
           <div class="lesson-caption"><span>原教学视频 · 完整呈现</span><span>建议在稳定网络下观看</span></div>
         </div>
       </div>
+    </section>
+
+    <section id="discussion" class="discussion section-wrap" aria-labelledby="discussion-title">
+      <div class="discussion-head"><div><p class="section-index">视频后的思考 / 真实图像讨论</p><h2 id="discussion-title" tabindex="-1">看完微课，<br>再读这两幅图。</h2></div><p>带着视频中的实验过程，先观察，再展开提示。这里讨论针影特征的比较与尺度条件，不从网页显示位置直接测量。</p></div>
+      <div class="evidence-board" id="real-images" aria-label="绣花针横向移动案例的两幅实验采集图像">
+        <div class="evidence-head"><span>从实验过程回到采集记录</span><strong>同一针影，在两幅图像中换了位置。</strong></div>
+        <div class="evidence-pair">
+          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-a.jpg" alt="位移前的实验采集图像，暗色绣花针针影位于画面偏左处" loading="lazy"><span class="evidence-marker" style="--mark-x:44%" aria-hidden="true"></span></div><figcaption><b>图像 A · 位移前</b><span>沿针影右侧边缘定位</span></figcaption></figure>
+          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-b.jpg" alt="位移后的实验采集图像，暗色绣花针针影位于画面偏右处" loading="lazy"><span class="evidence-marker" style="--mark-x:79%" aria-hidden="true"></span></div><figcaption><b>图像 B · 位移后</b><span>用同一方法再次定位</span></figcaption></figure>
+        </div>
+        <p class="evidence-note">红色标记仅帮助寻找相同侧的针影边缘；页面不把截图位置当作测量值。定量计算应回到原始图像像素坐标。</p>
+      </div>
+      <div class="discussion-questions">
+        <details><summary><span>01</span><strong>同一侧针影边缘，有什么变化？</strong></summary><div><p>先在两幅图中寻找同一特征。比较其前后位置时，应采用相同定位方法，并保持相关采集条件可比；不能把不同边缘或显示缩放造成的变化混在一起。</p><a href="#lesson" class="discussion-video-return" data-lesson-time="339">回看微课05:39 · 同一特征的图像比较 ↗</a></div></details>
+        <details><summary><span>02</span><strong>只看网页上的距离，能算出实际位移吗？</strong></summary><div><p>还需要原始图像中的像素位移 Δp、相机像元尺寸 k 和适用于当前系统的横向放大率 M，并核对采集与标定条件。条件成立时，可用 Δx = Δp × k / M 换算；网页缩放和红圈位置都不是这些参数。</p><a href="#lesson" class="discussion-video-return" data-lesson-time="363">回看微课06:03 · 尺度换算的条件 ↗</a></div></details>
+        <details><summary><span>03</span><strong>比较了针影，就完成三维重建了吗？</strong></summary><div><p>这一步完成的是强度图像中特征位置的比较；满足条件后还可做尺度换算。由全息记录恢复波前、相位或三维形貌，需要另外的分析与重建过程，不能由这两幅图的针影比较直接认定。</p><a href="#knowledge" class="underlined-link">继续读知识展签，辨析记录与信息 ↗</a></div></details>
+      </div>
+      <p class="discussion-next"><a class="underlined-link" href="#knowledge">带着刚才的判断，读知识展签 ↗</a></p>
     </section>
 
     <section id="knowledge" class="knowledge" aria-labelledby="knowledge-title">
@@ -178,7 +194,7 @@
       <div class="quiz-card" id="quiz-card"><div class="quiz-progress"><span id="quiz-count">问题 1 / 4</span><div class="progress-track"><span id="progress-fill"></span></div><span id="quiz-score">已理解 0 / 4</span></div><div id="quiz-content" aria-live="polite"></div></div>
     </section>
 
-    <section class="closing"><div class="section-wrap closing-inner"><span class="closing-star" aria-hidden="true">✳</span><p class="section-index">把一次观察，变成真正的理解</p><h2>原来，光会用条纹<br>写下自己的记忆。</h2><p>从照亮、相遇、记录到读图，这就是 Gabor 同轴全息的一次探索。</p><a class="button button-light" href="#top">重新走一遍光路 <span aria-hidden="true">↑</span></a></div></section>
+    <section class="closing"><div class="section-wrap closing-inner"><span class="closing-star" aria-hidden="true">✳</span><p class="section-index">把一次观察，变成真正的理解</p><h2>原来，光会用条纹<br>写下自己的记忆。</h2><p>沿光路理解记录，再用微课与图像讨论，把观察连成理解。</p><a class="button button-light" href="#top">重新走一遍光路 <span aria-hidden="true">↑</span></a></div></section>
   </main>
   <footer class="site-footer section-wrap"><div><strong>光的记忆</strong><span>一束光如何记录世界</span></div><p>基于 Gabor 同轴全息原理的互动科普原型。示意图与模拟图均用于教学说明。</p><a href="#top">回到顶部 ↑</a></footer>
 </body>

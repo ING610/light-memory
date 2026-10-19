@@ -1274,9 +1274,8 @@
         "evidence": "f2/f1≈1.93描述光束扩展；M用于图像尺度换算。",
         "basis": "依据内容的情境应用"
       },
-      "revisit": "#journey",
-      "stageIndex": 3,
-      "reviewLabel": "回到第四站 · 核对尺度条件 ↗",
+      "revisit": "#discussion",
+      "reviewLabel": "回到读图讨论 · 核对尺度条件 ↗",
       "question": "已知两枚扩束透镜的焦距比 f2/f1≈1.93。要使用 Δx=Δp·k/M 换算样品位移，能否直接把1.93填为 M？",
       "options": [
         "可以，凡是以比值表示的倍率都能互相替代",
@@ -1307,9 +1306,8 @@
         "evidence": "既定实验条件下采用M≈1；正式定量测量应根据具体系统配置或标定确定M。",
         "basis": "依据内容的情境应用"
       },
-      "revisit": "#journey",
-      "stageIndex": 3,
-      "reviewLabel": "回到第四站 · 检查适用的倍率 ↗",
+      "revisit": "#discussion",
+      "reviewLabel": "回到读图讨论 · 检查适用的倍率 ↗",
       "question": "知识总结在既定教学条件下写M≈1用于尺度换算演示。怎样理解这个近似更准确？",
       "options": [
         "它是带条件的教学近似；正式定量应用仍需适用的系统尺度或标定依据",
@@ -1340,9 +1338,8 @@
         "evidence": "k为相机像元尺寸，本练习采用3.45μm。",
         "basis": "依据内容的情境应用"
       },
-      "revisit": "#journey",
-      "stageIndex": 3,
-      "reviewLabel": "回到第四站 · 辨认像元尺度 ↗",
+      "revisit": "#discussion",
+      "reviewLabel": "回到读图讨论 · 辨认像元尺度 ↗",
       "question": "对未合并像元、未重采样的原始相机图像，尺度换算中的像元间距 k 指什么？",
       "options": [
         "网页上相邻两个屏幕像素的间距",
@@ -1470,9 +1467,8 @@
         "evidence": "比较前后图像同一稳定特征；记录过程不等于相位恢复或三维重建。",
         "basis": "依据内容的情境应用"
       },
-      "revisit": "#journey",
-      "stageIndex": 3,
-      "reviewLabel": "回到第四站 · 区分图像比较与重建 ↗",
+      "revisit": "#discussion",
+      "reviewLabel": "回到读图讨论 · 区分图像比较与重建 ↗",
       "question": "学习者比较两幅实际采集的强度图，找到对应针影边缘的位置变化。仅凭这一步，可以作出哪项判断？",
       "options": [
         "已经获得样品完整相位分布",
@@ -1503,9 +1499,8 @@
         "evidence": "Δp由同一特征的前后图像获得；Δx=Δp·k/M；正式定量需确定适用M。",
         "basis": "依据内容的情境应用"
       },
-      "revisit": "#journey",
-      "stageIndex": 3,
-      "reviewLabel": "回到第四站 · 补齐位移换算条件 ↗",
+      "revisit": "#discussion",
+      "reviewLabel": "回到读图讨论 · 补齐位移换算条件 ↗",
       "question": "已在两幅原始图像中确认同一针影边缘移动了8像素，已知 k=3.45 μm，但没有取得适用的 M 或其他等效尺度标定。现阶段怎样报告最恰当？",
       "options": [
         "报告对应图像特征变化8像素，并说明实际位移换算尚缺尺度依据，不能据此认定测量精度",
