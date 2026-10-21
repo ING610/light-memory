@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="refinements.css">
   <script src="quiz-sampler.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="apparatus-annotations.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -100,15 +101,16 @@
         <div class="journey-display">
           <div class="display-top"><span>GABOR IN-LINE HOLOGRAPHY</span><span id="display-counter">01 / 03</span></div>
           <div class="light-lab" id="light-lab" data-stage="0" role="img" aria-label="同轴全息光路示意，当前展示点亮光源" aria-describedby="gabor-field-note">
-            <svg class="gabor-diagram" viewBox="0 0 700 310" aria-hidden="true" focusable="false">
+            <svg class="gabor-diagram" viewBox="0 0 700 410" aria-hidden="true" focusable="false">
               <defs>
                 <pattern id="gabor-grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#dbe6da" stroke-width="1"/></pattern>
                 <linearGradient id="gabor-illumination"><stop stop-color="#ec966f" stop-opacity=".3"/><stop offset="1" stop-color="#edb08b" stop-opacity=".12"/></linearGradient>
                 <clipPath id="gabor-forward"><rect x="365" y="55" width="250" height="190"/></clipPath>
                 <pattern id="gabor-record-pattern" width="30" height="22" patternUnits="userSpaceOnUse"><path d="M0 4Q14 11 30 3M0 13Q12 20 30 12" stroke="#b95642" stroke-width="2" fill="none"/></pattern>
               </defs>
-              <rect width="700" height="310" fill="url(#gabor-grid)"/>
-              <path d="M30 150H655" stroke="#9eb7a9" stroke-width="1.5" stroke-dasharray="5 7"/>
+              <rect width="700" height="410" fill="url(#gabor-grid)"/>
+              <g transform="translate(0 40)">
+              <path d="M30 150H354M376 150H655" stroke="#9eb7a9" stroke-width="1.5" stroke-dasharray="5 7"/>
               <rect x="35" y="121" width="71" height="58" rx="8" fill="#d86c54"/>
               <rect x="48" y="134" width="39" height="31" rx="4" fill="none" stroke="#efab8c"/>
               <path d="M106 150H134" stroke="#e88b67" stroke-width="8"/>
@@ -128,14 +130,24 @@
               <text x="349" y="250" text-anchor="middle">小针段</text>
               <g class="gabor-record"><rect x="609" y="73" width="27" height="154" rx="4" fill="#41796d"/><rect x="615" y="80" width="15" height="140" rx="2" fill="#cce1d2"/><rect class="gabor-record-fringes" x="615" y="80" width="15" height="140" rx="2" fill="url(#gabor-record-pattern)"/></g>
               <g class="gabor-labels"><text x="71" y="280" text-anchor="middle">光源</text><text x="279" y="83" text-anchor="middle">宽光束</text><text x="622" y="280" text-anchor="middle">记录面</text></g>
+              </g>
+              <g class="gabor-fields gabor-direct-labels">
+                <path d="M438 105L430 150" class="gabor-label-leader reference-leader"/>
+                <text x="414" y="34" class="gabor-label-title reference-label">参考光</text>
+                <text x="414" y="65" class="gabor-label-description reference-label">未受样品明显调制的<tspan x="414" dy="28">直透光分量</tspan></text>
+                <path d="M370 328L471 274" class="gabor-label-leader object-leader"/>
+                <text x="290" y="333" class="gabor-label-title object-label">物光</text>
+                <text x="290" y="367" class="gabor-label-description object-label">样品散射、衍射<tspan x="290" dy="28">形成的光场</tspan></text>
+                <text x="622" y="347" text-anchor="middle" class="gabor-label-description overlap-label">两种光场分量<tspan x="622" dy="28">在此重叠</tspan></text>
+              </g>
             </svg>
           </div>
-          <div class="field-legend" aria-label="光场分量图例"><span><i class="reference-key" aria-hidden="true"></i>参考光：直透分量</span><span><i class="object-key" aria-hidden="true"></i>物光：样品散射或衍射分量</span></div>
-          <p class="field-note" id="gabor-field-note">针段投影只占照明光束截面的一小部分，未被明显调制的直透光作为参考光；物光与它同轴重叠。波前、条纹及尺寸均为定性示意，针段并非自行发光。</p>
+          <div class="field-legend" aria-label="光场分量图例"><span><i class="reference-key" aria-hidden="true"></i>参考光：直透光分量</span><span><i class="object-key" aria-hidden="true"></i>物光：样品散射、衍射光场</span></div>
+          <p class="field-note" id="gabor-field-note">针段仅遮挡光束的一小部分；两种光场分量来自同一束入射相干光，在记录面同轴重叠。波前、条纹及尺寸均为定性示意，针段并非自行发光。</p>
           <div class="stage-panels">
             <article id="panel-0" class="stage-panel is-active" role="tabpanel" aria-labelledby="tab-0"><div class="stage-kicker">第一站 · 点亮</div><h3>稳定的光，让相遇有迹可循。</h3><p>扩束准直后的相干光覆盖样品，针段投影只占光束截面的一小部分。未被明显调制的部分继续直透，受针段影响的部分形成物光，两者将在记录面相遇。</p><p class="stage-takeaway"><b>记住这一点</b> 这里的“参考光”是未被样品明显扰动、继续传播的光。</p></article>
             <article id="panel-1" class="stage-panel" role="tabpanel" aria-labelledby="tab-1" hidden><div class="stage-kicker">第二站 · 遇见</div><h3>样品改变了光，也把自身的信息交给光。</h3><p>样品使部分入射光散射或衍射，形成物光；未被样品明显调制的直透分量作为参考光。两者在样品下游同轴传播，并在记录面重叠。</p><p class="stage-takeaway"><b>记住这一点</b> 记录面接收的是两种光场叠加后的强度分布，不是直接读取相位。</p></article>
-            <article id="panel-2" class="stage-panel" role="tabpanel" aria-labelledby="tab-2" hidden><div class="stage-kicker">第三站 · 留下</div><h3>两束光相遇，明暗成为可保存的线索。</h3><p>物光和参考光叠加形成干涉。探测器记录的是光强，不会直接把光波的相位写成数值；干涉条纹让相位差的信息间接进入记录。</p><p class="stage-takeaway"><b>下一步</b> <a href="#observe">到干涉互动中分别观察光场分量 ↗</a></p></article>
+            <article id="panel-2" class="stage-panel" role="tabpanel" aria-labelledby="tab-2" hidden><div class="stage-kicker">第三站 · 留下</div><h3>两种光场分量叠加，明暗成为可保存的线索。</h3><p>物光和参考光叠加形成干涉。探测器记录的是光强，不会直接把光波的相位写成数值；干涉条纹让相位差的信息间接进入记录。</p><p class="stage-takeaway"><b>下一步</b> <a href="#observe">到干涉互动中分别观察光场分量 ↗</a></p></article>
           </div>
           <div class="display-controls"><button id="prev-step" class="small-button" type="button" disabled>← 上一站</button><button id="next-step" class="small-button small-button-filled" type="button">下一站 →</button></div>
         </div>
@@ -144,15 +156,34 @@
 
     <section class="apparatus section-wrap" aria-labelledby="apparatus-title">
       <div class="apparatus-head"><div><p class="section-index">实验光路 / 三维模型</p><h2 id="apparatus-title">这束光，也有自己的实验桌。</h2></div><p>从左向右辨认激光器、调光器件、样品区与记录相机：光在哪里被调节，又在哪里遇到样品并留下记录？</p></div>
-      <figure class="apparatus-figure"><img src="apparatus-model.png" alt="新版实验光路三维模型：激光器、光学器件、样品区和记录相机沿实验桌排列" loading="lazy"></figure>
-      <details class="apparatus-angle"><summary>换个角度：从上方看光轴 <span aria-hidden="true">＋</span></summary><div><img src="apparatus-overhead.png" alt="俯视三维模型，红色光路沿光学器件中心延伸至记录端" loading="lazy"><p>从俯视角度可以更清楚地看到各器件沿同一轴线排列。</p></div></details>
+      <div class="apparatus-label-control"><label for="apparatus-label-toggle"><input id="apparatus-label-toggle" type="checkbox" aria-controls="apparatus-label-list apparatus-main-pins apparatus-overhead-pins">显示器件标注</label><span>按编号对照下方名称与作用；同号标记属于同一组器件。</span></div>
+      <figure class="apparatus-figure"><div class="apparatus-view"><img src="apparatus-model.png" width="1920" height="1080" alt="新版实验光路三维模型：激光器、光学器件、样品区和记录相机沿实验桌排列" loading="lazy"><div class="apparatus-pins" id="apparatus-main-pins" data-apparatus-labels hidden aria-hidden="true">
+        <span class="apparatus-pin" style="--pin-x:30.73%;--pin-y:42.41%" title="01 氦氖激光器">01</span>
+        <span class="apparatus-pin" style="--pin-x:42.66%;--pin-y:42.31%" title="02 偏振片">02</span><span class="apparatus-pin" style="--pin-x:49.79%;--pin-y:42.22%" title="02 偏振片">02</span>
+        <span class="apparatus-pin" style="--pin-x:56.98%;--pin-y:41.94%" title="03 扩束准直系统">03</span><span class="apparatus-pin" style="--pin-x:64.11%;--pin-y:41.76%" title="03 扩束准直系统">03</span>
+        <span class="apparatus-pin" style="--pin-x:71.20%;--pin-y:41.57%" title="04 可变光阑">04</span><span class="apparatus-pin" style="--pin-x:78.49%;--pin-y:45.19%" title="05 样品与平移台">05</span><span class="apparatus-pin" style="--pin-x:87.19%;--pin-y:41.02%" title="06 面扫描相机">06</span>
+      </div></div></figure>
+      <ol class="apparatus-label-list" id="apparatus-label-list" data-apparatus-labels hidden aria-label="器件编号、名称与微课讲授的作用">
+        <li><span>01</span><div><strong>氦氖激光器</strong><p>提供相干照明。</p></div></li>
+        <li><span>02</span><div><strong>偏振片（两片）</strong><p>改变两片偏振片的相对夹角，调节透射光强。</p></div></li>
+        <li><span>03</span><div><strong>扩束准直系统</strong><p>两枚凸透镜用于扩束，并获得较好的准直输出。</p></div></li>
+        <li><span>04</span><div><strong>可变光阑</strong><p>限制有效通光范围，减少杂散光对图像记录的影响。</p></div></li>
+        <li><span>05</span><div><strong>样品与平移台</strong><p>承载针段样品，并沿垂直光轴方向调节其位置。</p></div></li>
+        <li><span>06</span><div><strong>面扫描相机</strong><p>采集并记录光强分布。</p></div></li>
+      </ol>
+      <details class="apparatus-angle"><summary>换个角度：从上方看光轴 <span aria-hidden="true">＋</span></summary><div><div class="apparatus-view"><img src="apparatus-overhead.png" width="1920" height="1080" alt="俯视三维模型，红色光路沿光学器件中心延伸至记录端" loading="lazy"><div class="apparatus-pins" id="apparatus-overhead-pins" data-apparatus-labels hidden aria-hidden="true">
+        <span class="apparatus-pin" style="--pin-x:21.51%;--pin-y:48.15%" title="01 氦氖激光器">01</span>
+        <span class="apparatus-pin" style="--pin-x:35.94%;--pin-y:48.33%" title="02 偏振片">02</span><span class="apparatus-pin" style="--pin-x:44.74%;--pin-y:48.24%" title="02 偏振片">02</span>
+        <span class="apparatus-pin" style="--pin-x:53.54%;--pin-y:48.24%" title="03 扩束准直系统">03</span><span class="apparatus-pin" style="--pin-x:62.40%;--pin-y:48.06%" title="03 扩束准直系统">03</span>
+        <span class="apparatus-pin" style="--pin-x:71.15%;--pin-y:48.15%" title="04 可变光阑">04</span><span class="apparatus-pin" style="--pin-x:79.22%;--pin-y:47.96%" title="05 样品与平移台">05</span><span class="apparatus-pin" style="--pin-x:91.09%;--pin-y:47.96%" title="06 面扫描相机">06</span>
+      </div></div><p>从俯视角度可以更清楚地看到各器件沿同一轴线排列。</p></div></details>
     </section>
 
     <section id="observe" class="observe section-wrap" aria-labelledby="observe-title">
-      <div class="observe-intro"><p class="section-index">互动实验 / 干涉从何而来</p><h2 id="observe-title">把两束光分开看，<br>条纹还在吗？</h2><p>在理想化单点散射模型中，分别观察参考光与物光的光场分量，再看它们叠加后的强度分布。移动相对位置，比较条纹疏密。</p></div>
+      <div class="observe-intro"><p class="section-index">互动实验 / 干涉从何而来</p><h2 id="observe-title">把两种光场分量分开看，<br>条纹从哪里来？</h2><p>在理想化单点散射模型中，分别观察参考光与物光的光场分量，再看它们叠加后的强度分布。移动相对位置，比较条纹疏密。这里是简化的教学示意，不是真实实验采集数据。</p></div>
       <div class="experiment">
-        <div class="experiment-visual"><div class="experiment-title"><span>记录面 / 强度分布</span><span id="pattern-status" aria-live="polite">两束光叠加</span></div><canvas id="fringe-canvas" width="300" height="300" aria-label="理想化单点散射模型生成的定性光强图，并非真实绣花针全息图"></canvas><div class="pattern-scale"><span>亮</span><span class="scale-bar"></span><span>暗</span></div><p class="pattern-disclaimer">理想化单点模型 · 定性示意。<a id="view-real-images" href="#discussion">查看视频后的真实记录讨论 ↗</a></p></div>
-        <div class="experiment-controls"><h3>试一试</h3><p>看似不起眼的条纹，来自两束相干光的叠加。</p><div class="toggle-row"><label for="reference-toggle"><span class="toggle-name">参考光分量</span><small>未明显受样品扰动</small></label><input id="reference-toggle" type="checkbox" checked></div><div class="toggle-row"><label for="object-toggle"><span class="toggle-name">物光分量</span><small>携带样品影响</small></label><input id="object-toggle" type="checkbox" checked></div><div class="range-group"><label for="distance">记录面的相对位置 <output id="distance-value" for="distance">居中</output></label><input id="distance" type="range" min="18" max="50" value="30"><div class="range-ends"><span>较近</span><span>较远</span></div></div><div class="experiment-feedback" id="experiment-feedback" aria-live="polite">两束光场叠加后，记录的光强中出现干涉条纹。</div><details class="model-boundary"><summary>这张教学图与真实实验如何对应？</summary><p>图样采用理想化单点散射波与平面参考波，用来理解干涉项。开关只是在模型中分别显示光场分量；相对位置只展示变化趋势，不对应实验装置的定量距离或绣花针样品的真实图样。</p></details></div>
+        <div class="experiment-visual"><div class="experiment-title"><span>记录面 / 强度分布</span><span id="pattern-status" aria-live="polite">两种光场分量叠加</span></div><canvas id="fringe-canvas" width="300" height="300" aria-label="理想化单点散射模型生成的定性光强图，并非真实绣花针全息图"></canvas><div class="pattern-scale"><span>亮</span><span class="scale-bar"></span><span>暗</span></div><p class="pattern-disclaimer">理想化单点模型 · 定性示意。<a id="view-real-images" href="#discussion">查看视频后的真实记录讨论 ↗</a></p></div>
+        <div class="experiment-controls"><h3>试一试</h3><p>这里比较的是同一束入射相干光形成的两种光场分量。</p><div class="toggle-row"><label for="reference-toggle"><span class="toggle-name">参考光分量</span><small>未受样品明显调制的直透光分量</small></label><input id="reference-toggle" type="checkbox" checked></div><div class="toggle-row"><label for="object-toggle"><span class="toggle-name">物光分量</span><small>样品散射、衍射形成的光场</small></label><input id="object-toggle" type="checkbox" checked></div><div class="range-group"><label for="distance">记录面的相对位置 <output id="distance-value" for="distance">居中</output></label><input id="distance" type="range" min="18" max="50" value="30"><div class="range-ends"><span>较近</span><span>较远</span></div></div><div class="experiment-feedback" id="experiment-feedback" aria-live="polite">两种光场分量叠加后，记录的光强中出现干涉条纹。</div><details class="model-boundary"><summary>这张教学图与真实实验如何对应？</summary><p>图样采用理想化单点散射波与平面参考波，用来理解干涉项。开关只是在模型中分别显示光场分量；相对位置只展示变化趋势，不对应实验装置的定量距离或绣花针样品的真实图样。</p></details></div>
       </div>
       <p class="model-to-experiment">先用理想模型理解干涉，再在完整微课中认识实际实验过程，最后回到真实图像讨论针影变化。<a class="underlined-link" href="#lesson">接着看完整微课 ↗</a></p>
     </section>
@@ -183,15 +214,15 @@
       <div class="evidence-board" id="real-images" aria-label="绣花针横向移动案例的两幅实验采集图像">
         <div class="evidence-head"><span>从实验过程回到采集记录</span><strong>同一针影，在两幅图像中换了位置。</strong></div>
         <div class="evidence-pair">
-          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-a.jpg" alt="位移前的实验采集图像，暗色绣花针针影位于画面偏左处" loading="lazy"><span class="evidence-marker" style="--mark-x:42%" aria-hidden="true"></span></div><figcaption><b>图像 A · 位移前</b><span>沿针影右侧边缘观察</span></figcaption></figure>
-          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-b.jpg" alt="位移后的实验采集图像，暗色绣花针针影位于画面偏右处" loading="lazy"><span class="evidence-marker" style="--mark-x:74%" aria-hidden="true"></span></div><figcaption><b>图像 B · 位移后</b><span>对照同侧明暗过渡区域</span></figcaption></figure>
+          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-a.jpg" alt="位移前的实验采集图像，暗色绣花针针影位于画面偏左处" loading="lazy"><span class="evidence-marker" style="--mark-x:42%" aria-hidden="true"></span></div><figcaption><b>图像 A · 位移前</b><span>沿针影右侧明暗过渡区域定位</span></figcaption></figure>
+          <figure class="evidence-frame"><div class="evidence-photo"><img src="experiment-b.jpg" alt="位移后的实验采集图像，暗色绣花针针影位于画面偏右处" loading="lazy"><span class="evidence-marker" style="--mark-x:74%" aria-hidden="true"></span></div><figcaption><b>图像 B · 位移后</b><span>沿针影右侧明暗过渡区域定位</span></figcaption></figure>
         </div>
         <p class="evidence-note">红色标记仅帮助寻找相同侧的针影边缘；页面不把截图位置当作测量值。定量计算应回到原始图像像素坐标。</p>
       </div>
       <div class="discussion-questions">
         <details><summary><span>01</span><strong>同一侧针影边缘，有什么变化？</strong></summary><div><p>先在两幅图中寻找同一特征。比较其前后位置时，应采用相同定位方法，并保持相关采集条件可比；不能把不同边缘或显示缩放造成的变化混在一起。</p><a href="#lesson" class="discussion-video-return" data-lesson-time="339">回看微课05:39 · 同一特征的图像比较 ↗</a></div></details>
         <details><summary><span>02</span><strong>只看网页上的距离，能算出实际位移吗？</strong></summary><div><p>还需要原始图像中的像素位移 Δp、相机像元尺寸 k 和适用于当前系统的横向放大率 M，并核对采集与标定条件。条件成立时，可用 Δx = Δp × k / M 换算；网页缩放和红圈位置都不是这些参数。</p><a href="#lesson" class="discussion-video-return" data-lesson-time="363">回看微课06:03 · 尺度换算的条件 ↗</a></div></details>
-        <details><summary><span>03</span><strong>比较了针影，就完成三维重建了吗？</strong></summary><div><p>这一步完成的是强度图像中特征位置的比较；满足条件后还可做尺度换算。由全息记录恢复波前、相位或三维形貌，需要另外的分析与重建过程，不能由这两幅图的针影比较直接认定。</p><a href="#knowledge" class="underlined-link">继续读知识展签，辨析记录与信息 ↗</a></div></details>
+        <details><summary><span>03</span><strong>比较了针影，就完成三维重建了吗？</strong></summary><div><p>这一步完成的是强度图像中特征位置的比较；满足条件后还可做尺度换算。微课在这里讲授的是图像比较与尺度换算，不将针影比较表述为波前、相位或三维形貌的重建结果。</p><a href="#knowledge" class="underlined-link">继续读知识展签，辨析记录与信息 ↗</a></div></details>
       </div>
       <p class="discussion-next"><a class="underlined-link" href="#knowledge">带着刚才的判断，读知识展签 ↗</a></p>
     </section>
@@ -200,8 +231,8 @@
       <div class="section-wrap knowledge-layout">
         <div class="knowledge-intro"><p class="section-index">知识展签 / 三个概念辨析</p><h2 id="knowledge-title">看见现象之后，<br>再读懂原理。</h2><p>这三个展签解释探索中容易混淆的概念。读完后可回看现象，再到下方完成四道基础题。</p><div class="learning-resource"><a class="archive-link" href="https://ing610.github.io/knowledge_system/" target="_blank" rel="noopener noreferrer">深入阅读｜完整知识库 ↗</a><p class="resource-description">从实验原理、光路结构到图像分析，进一步展开学习。</p><p class="resource-caption">配套图文资源 · 新窗口打开，阅读后可返回本页继续探索。</p></div></div>
         <div class="knowledge-list">
-          <details><summary><span>01</span><strong>探测器能直接记录光的相位吗？</strong><i aria-hidden="true">＋</i></summary><div class="knowledge-answer"><p>常规探测器记录的是光强。物光与参考光干涉后，相位差会影响明暗分布，因此相位信息能被间接编码在条纹中。</p><a class="knowledge-return" href="#observe">← 回到动手观察，比较光强的变化</a></div></details>
-          <details><summary><span>02</span><strong>全息图为什么不像普通照片？</strong><i aria-hidden="true">＋</i></summary><div class="knowledge-answer"><p>普通照片主要显示场景的亮度与轮廓；同轴全息图记录的是干涉强度。要从中恢复物体信息，需要后续分析或数值重建。</p><a class="knowledge-return" id="knowledge-return-record" href="#journey">← 回到第三站，再看条纹如何留下</a></div></details>
+          <details><summary><span>01</span><strong>探测器能直接记录光的相位吗？</strong><i aria-hidden="true">＋</i></summary><div class="knowledge-answer"><p>常规探测器记录的是光强。物光与参考光干涉后，相位差会影响明暗分布，使物光相对于参考光的相位信息通过干涉体现在光强中。</p><a class="knowledge-return" href="#observe">← 回到动手观察，比较光强的变化</a></div></details>
+          <details><summary><span>02</span><strong>全息图为什么不像普通照片？</strong><i aria-hidden="true">＋</i></summary><div class="knowledge-answer"><p>普通照片主要呈现场景的亮度与轮廓；这里的同轴全息图记录物光与参考光叠加后的干涉光强分布。两光场的相对相位影响明暗条纹，使相关信息间接进入记录。</p><a class="knowledge-return" id="knowledge-return-record" href="#journey">← 回到第三站，再看条纹如何留下</a></div></details>
           <details><summary><span>03</span><strong>背景图像就是参考光吗？</strong><i aria-hidden="true">＋</i></summary><div class="knowledge-answer"><p>背景图像是相机采集的数据，用于图像比较或处理；参考光是在全息记录时与物光发生干涉的光场。两者不能混为一谈。</p><a class="knowledge-return" id="knowledge-return-reference" href="#journey">← 回到第二站，辨认参考光与物光</a></div></details>
         </div>
       </div>

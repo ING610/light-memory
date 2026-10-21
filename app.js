@@ -107,11 +107,11 @@
     distanceValue.textContent = position;
     distance.setAttribute("aria-valuetext", `记录面相对位置：${position}`);
     if (reference.checked && object.checked) {
-      status.textContent = "两束光叠加";
-      feedback.textContent = "两束光场叠加后，记录的光强中出现明暗条纹。移动相对位置，观察条纹疏密的定性变化。";
+      status.textContent = "两种光场分量叠加";
+      feedback.textContent = "两种光场分量叠加后，记录的光强中出现明暗条纹。移动相对位置，观察条纹疏密的定性变化。";
     } else if (reference.checked) {
       status.textContent = "仅显示参考光分量";
-      feedback.textContent = "仅显示参考光分量时，记录面仍有光强，但没有两束光之间的干涉项。";
+      feedback.textContent = "仅显示参考光分量时，记录面仍有光强，但没有这两种光场分量之间的干涉项。";
     } else if (object.checked) {
       status.textContent = "仅显示物光分量";
       feedback.textContent = "仅显示物光分量时，同样缺少与参考光叠加产生的干涉项。";
